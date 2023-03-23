@@ -11,6 +11,7 @@ const client = new Client({
 	port: 5432,
 });
 
+// Fetch all the sugar prices
 app.get("/prices", async (req, res) => {
 	try {
 		await client.connect();
@@ -29,6 +30,7 @@ app.get("/prices", async (req, res) => {
 	}
 });
 
+// Fetch sugar price based on country
 app.get("/prices/:country", async (req, res) => {
 	try {
 		await client.connect();

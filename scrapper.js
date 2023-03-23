@@ -1,11 +1,6 @@
-const express = require("express");
 const { Client } = require("pg");
-
 const axios = require("axios");
 const cheerio = require("cheerio");
-const routes = require("./routes/index");
-const app = express();
-const port = 5000;
 
 const urls = [
 	{ url: "https://www.jumia.co.ke/sugar/", country: "Kenya" },
