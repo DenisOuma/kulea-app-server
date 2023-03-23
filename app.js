@@ -3,7 +3,7 @@ const { Client } = require("pg");
 
 const axios = require("axios");
 const cheerio = require("cheerio");
-
+const routes = require("./routes/index");
 const app = express();
 const port = 5000;
 
