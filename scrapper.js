@@ -31,11 +31,13 @@ async function scrapeData() {
 			$(".-paxs>article").each((index, sugar) => {
 				const sugarName = $(sugar).find(".info h3").text().trim();
 				const sugarPrice = $(sugar).find(".prc").text().trim();
+				const quantityMatch = sugarName.match(/\d+(\.\d+)?\s*[Kk][Gg]/);
+				const quantity = quantityMatch ? quantityMatch[0] : "N/A";
 				const currentDate = new Date().toISOString().slice(0, 10);
 
 				const insertQuery = {
-					text: "INSERT INTO sugar_prices (sugar_name, country, date, price) VALUES ($1, $2, $3, $4)",
-					values: [sugarName, url.country, currentDate, sugarPrice],
+					text: "INSERT INTO sugar_prices (sugar_name, country, date, quantity, price) VALUES ($1, $2, $3, $4, $5)",
+					values: [sugarName, url.country, currentDate, quantity, sugarPrice],
 				};
 
 				const promise = client.query(insertQuery);

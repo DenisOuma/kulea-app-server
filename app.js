@@ -29,7 +29,9 @@ app.use((req, res, next) => {
 
 app.get("/prices", async (req, res) => {
 	try {
-		const result = await req.db.query("SELECT * FROM sugar_prices");
+		const result = await req.db.query(
+			"SELECT * FROM sugar_prices WHERE quantity != 'N/A'"
+		);
 		res.json(result.rows);
 	} catch (error) {
 		console.error(error);
