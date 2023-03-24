@@ -2,12 +2,14 @@ const { Client } = require("pg");
 const axios = require("axios");
 const cheerio = require("cheerio");
 
+// declaration of url object for all 3 countries
 const urls = [
 	{ url: "https://www.jumia.co.ke/sugar/", country: "Kenya" },
 	{ url: "https://www.jumia.ug/sugar/", country: "Uganda" },
 	{ url: "https://www.jumia.com.ng/sugars/", country: "Nigeria" },
 ];
 
+// Connecting to my postsql db
 const client = new Client({
 	user: "postgres",
 	host: "localhost",
@@ -16,6 +18,7 @@ const client = new Client({
 	port: 5432,
 });
 
+// get country list of prices,name,qty, and set the date cheerio this function will scrap
 async function scrapeData() {
 	try {
 		await client.connect();

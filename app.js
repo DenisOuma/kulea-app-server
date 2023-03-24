@@ -27,7 +27,9 @@ app.use((req, res, next) => {
 	next();
 });
 
+// get request for Latest sugar prices for all countries
 app.get("/prices", async (req, res) => {
+	// select only prices in kg
 	try {
 		const result = await req.db.query(
 			"SELECT * FROM sugar_prices WHERE quantity != 'N/A'"
@@ -39,6 +41,7 @@ app.get("/prices", async (req, res) => {
 	}
 });
 
+// get The latest sugar price for a given country.
 app.get("/prices/:country", async (req, res) => {
 	const { country } = req.params;
 
