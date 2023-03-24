@@ -29,7 +29,6 @@ The API provides endpoints for retrieving sugar prices by country, as well as th
     PostgreSQL (save data to db)
     Cheerio (for web scraping)
     Axios (for making HTTP requests)
-    tailwindCSS (styling the application)
 
 ## Program Setup
 
