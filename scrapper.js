@@ -1,7 +1,7 @@
+require("dotenv").config();
 const { Client } = require("pg");
 const axios = require("axios");
 const cheerio = require("cheerio");
-
 // declaration of url object for all 3 countries
 const urls = [
 	{ url: "https://www.jumia.co.ke/sugar/", country: "Kenya" },
@@ -11,11 +11,11 @@ const urls = [
 
 // Connecting to my postsql db
 const client = new Client({
-	user: "postgres",
-	host: "localhost",
-	database: "sugarprice",
-	password: "denis123",
-	port: 5432,
+	user: process.env.DB_USER,
+	host: process.env.DB_HOST,
+	database: process.env.DB_NAME,
+	password: process.env.DB_PASSWORD,
+	port: process.env.DB_PORT,
 });
 
 // get country list of prices,name,qty, and set the date cheerio this function will scrap

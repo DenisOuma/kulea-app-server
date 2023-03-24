@@ -1,0 +1,75 @@
+## About The Project
+
+# Sugar Price Tracker
+
+## Authors Name
+
+    Denis Ouma Otieno
+
+## Table of contents
+
+- [General info](#generalinfo)
+- [Features](#Features)
+- [Technologies Used](#TechnologiesUsed)
+- [Getting Started](#GettingStarted)
+- [API Endpoints](#APIEndpoints)
+
+- [License](#License)
+
+## General info
+
+This is an API built with Node.js and cheerio that scrapes sugar prices from various online sources and provides a RESTful interface for accessing the data. The API scrapes sugar prices daily and stores them in a PostgreSQL database.
+
+The API provides endpoints for retrieving sugar prices by country, as well as the latest sugar price for a given country. The API also includes a filter option to allow users to filter sugar prices by country.
+
+## Tecknologies Used
+
+    Node.js
+    Express.js
+    PostgreSQL (save data to db)
+    Cheerio (for web scraping)
+    Axios (for making HTTP requests)
+    tailwindCSS (styling the application)
+
+## Program Setup
+
+To use this API, follow these steps:
+
+    1. Clone the repository
+
+    2. Install dependencies using
+        npm install
+
+    3. Create a PostgreSQL database and configure the .env file with your database credentials, then create a new table in the  database inthis formart, option use pgAdmin query Tool to create the table. compy and paste the script and run to create
+    sugar_prices table.
+
+                CREATE TABLE sugar_prices (
+                id SERIAL PRIMARY KEY,
+                sugar_name VARCHAR(255) NOT NULL,
+                country VARCHAR(255) NOT NULL,
+                quantity VARCHAR(255) NOT NULL,
+                date DATE NOT NULL,
+                price VARCHAR(255) NOT NULL
+                );
+
+    4. To scrap data from the internet run this command
+            node scrapper.js
+
+    5. to start the server run this command in your directory folder
+        npm run serve
+
+The API will then be accessible at http://localhost:5000.
+
+## Endpoints
+
+    GET /prices - Retrieves all sugar prices in the database
+    GET /prices/:country - Retrieves sugar prices for a specific country
+    GET /prices/:country - Retrieves the latest sugar price for a specific country
+
+## Filter Option
+
+The API also includes a filter option to allow users to filter sugar prices by country. To use the filter option, make a GET request to /prices with the country query parameter set to the desired country.
+
+## Contributing
+
+Contributions to this project are welcome. To contribute, fork the repository and create a pull request with your changes.
