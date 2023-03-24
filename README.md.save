@@ -62,7 +62,8 @@ The API will then be accessible at http://localhost:5000.
 ## Endpoints
 
     GET /prices - Retrieves all sugar prices in the database
-    GET /prices/:country - Retrieves the latest sugar price for a specific country
+    GET /prices/:country - Retrieves sugar prices for a specific country
+    GET /prices/:country - Retrieves the latest sugar price for a specifi
 
 ## Filter Option
 
