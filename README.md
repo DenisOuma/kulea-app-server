@@ -71,3 +71,7 @@ The API also includes a filter option to allow users to filter sugar prices by c
 ## Contributing
 
 Contributions to this project are welcome. To contribute, fork the repository and create a pull request with your changes.
+
+## Database Preview of scrapt Data
+
+<img src="./image/Screenshot from 2023-03-26 19-17-12.png" width="900px"/>
