@@ -59,6 +59,10 @@ To use this API, follow these steps:
 
 The API will then be accessible at http://localhost:5000.
 
+## Client source Code
+
+https://github.com/DenisOuma/Kulea-app-client
+
 ## Endpoints
 
     GET /prices - Retrieves all sugar prices in the database
@@ -72,3 +76,4 @@ The API also includes a filter option to allow users to filter sugar prices by c
 ## Contributing
 
 Contributions to this project are welcome. To contribute, fork the repository and create a pull request with your changes.
+
